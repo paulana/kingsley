@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<div class="jumbotron">
+    <h2>A Text Analyzer</h2>
+    <p class="lead">Enter a string of text below to view a text analyzation:</p>
+    <form action="@Url.Action("Analyze", "Home")">
+                   @Html.TextArea("text",null, 4, 600, new { @class = "text-body" })
+        <br/><br />
+        <input type="submit" value="Analyze" class="ViewResults"/>
+    </form>
+    
+    <h3>Some sample text:</h3>
+    <p>"Far out in the uncharted backwaters of the unfashionable end of the western spiral arm of the Galaxy lies a small unregarded yellow sun. Orbiting this at a distance of roughly ninety-two million miles is an utterly insignificant little blue green planet whose ape-descended life forms are so amazingly primitive that they still think digital watches are a pretty neat idea." - Hitchhiker's Guide to the Galaxy</p>
+    
+    <div id="resultList" style="max-height: 200px;">
+        @model Kingsley.Controllers.ResultModel
+        <p>Total Words: @ViewData["TotalWords"] Unique Words: @ViewData["UniqueWords"]</p>
+        <div style="float: left; margin: 0.5em 1em;">@Html.DisplayFor(x => x.Results)</div>
+    </div>
+    
+</div>

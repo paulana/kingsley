@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<div class="jumbotron">
+    <h1>A Text Analyzer</h1>
+    <p class="lead">Enter a string of text below to view a text analyzation:</p>
+    <form action="/Home/Analyze">
+        <textarea width="100" height="100"><%= ViewData["TextBody"] %></textarea>
+        <input type="submit" value="Analyze"/>
+    </form>
+    
+    <h2>Some sample text:</h2>
+    <p>"Far out in the uncharted backwaters of the unfashionable end of the western spiral arm of the Galaxy lies a small unregarded yellow sun. Orbiting this at a distance of roughly ninety-two million miles is an utterly insignificant little blue green planet whose ape-descended life forms are so amazingly primitive that they still think digital watches are a pretty neat idea." - Hitchhiker's Guide to the Galaxy</p>
+</div>
